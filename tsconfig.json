@@ -1,7 +1,26 @@
 {
-  "extends": "@tsconfig/recommended/tsconfig.json",
-  "include": ["src", "types"],
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Default config",
   "compilerOptions": {
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "CommonJS",
+    "lib": ["ESNext"],
+    "composite": false,
+    "declaration": true,
+    "sourceMap": true,
+    "useDefineForClassFields": true,
+    "noEmit": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
+    "preserveWatchOutput": true,
+    "allowJs": false,
+    "strict": true,
+    "importHelpers": true
   }
 }

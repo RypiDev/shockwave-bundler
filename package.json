@@ -1,59 +1,22 @@
 {
   "name": "shockwave-bundler",
   "version": "0.1.0",
+  "type": "module",
   "license": "MIT",
   "author": "Walidoux",
-  "main": "dist/index.js",
-  "module": "dist/shockwave-bundler.esm.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
   "scripts": {
-    "analyze": "size-limit --why",
-    "build": "dts build",
-    "lint": "dts lint",
-    "prepare": "dts build",
-    "size": "size-limit",
-    "start": "dts watch",
-    "test": "dts test"
+    "dev": "ts-node-dev --respawn src/index.ts"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "dts lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "peerDependencies": {},
-  "engines": {
-    "node": ">=12"
-  },
-  "size-limit": [
-    {
-      "path": "dist/shockwave-bundler.cjs.production.min.js",
-      "limit": "10 KB"
-    },
-    {
-      "path": "dist/shockwave-bundler.esm.js",
-      "limit": "10 KB"
-    }
-  ],
-  "devDependencies": {
-    "@size-limit/preset-small-lib": "^8.2.4",
+  "prettier": "@walidoux/prettier-config",
+  "dependencies": {
     "@tsconfig/recommended": "^1.0.2",
-    "dts-cli": "^2.0.0",
-    "husky": "^8.0.3",
-    "size-limit": "^8.2.4",
-    "tslib": "^2.5.0",
+    "@types/node": "^18.15.11",
+    "@walidoux/prettier-config": "1.0.3",
+    "free-tex-packer-core": "^0.3.4",
+    "swf-parser": "0.14.1",
+    "swf-types": "0.14.0",
+    "ts-node": "10.9.1",
+    "ts-node-dev": "1.1.8",
     "typescript": "^5.0.4"
   }
 }
