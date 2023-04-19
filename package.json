@@ -1,22 +1,37 @@
 {
   "name": "shockwave-bundler",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "type": "module",
   "license": "MIT",
   "author": "Walidoux",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts"
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "lint:typescript": "eslint \"**/*.ts\" --ignore-path \".gitignore\" && tsc --noemit",
+    "lint:prettier": "prettier \".\" --check --ignore-path \".gitignore\"",
+    "lint:editorconfig": "editorconfig-checker"
   },
   "prettier": "@walidoux/prettier-config",
   "dependencies": {
-    "@tsconfig/recommended": "^1.0.2",
-    "@types/node": "^18.15.11",
-    "@walidoux/prettier-config": "1.0.3",
-    "free-tex-packer-core": "^0.3.4",
     "swf-parser": "0.14.1",
     "swf-types": "0.14.0",
     "ts-node": "10.9.1",
     "ts-node-dev": "1.1.8",
-    "typescript": "^5.0.4"
+    "free-tex-packer-core": "^0.3.4"
+  },
+  "devDependencies": {
+    "@walidoux/prettier-config": "1.0.3",
+    "@walidoux/eslint-config": "1.0.3",
+    "@tsconfig/recommended": "^1.0.2",
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4",
+    "prettier": "2.8.7",
+    "eslint": "8.38.0",
+    "editorconfig-checker": "^5.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@walidoux/eslint-config"
+    ]
   }
 }
