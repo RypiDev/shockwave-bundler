@@ -9,7 +9,6 @@
     "declaration": true,
     "sourceMap": true,
     "useDefineForClassFields": true,
-    "noEmit": true,
     "declarationMap": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
@@ -18,9 +17,12 @@
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
+    "removeComments": true,
     "preserveWatchOutput": true,
     "allowJs": false,
     "strict": true,
-    "importHelpers": true
+    "noEmitOnError": true,
+    "importHelpers": true,
+    "outDir": "dist"
   }
 }
