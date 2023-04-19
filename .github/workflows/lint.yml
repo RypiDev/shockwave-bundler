@@ -1,0 +1,29 @@
+name: 'Linting code'
+
+on:
+  push:
+    branches: [develop]
+  pull_request:
+    branches: [develop]
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3.0.0
+      - uses: actions/setup-node@v3.0.0
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Linting prettier
+        run: yarn lint:prettier
+
+      - name: Linting typescript
+        run: yarn lint:typescript
+
+      - name: Checking editorconfig
+        run: yarn lint:editorconfig
